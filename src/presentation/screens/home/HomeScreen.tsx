@@ -6,12 +6,6 @@ export const HomeScreen = () => {
   return (
     <View>
       <Text>HomeScreen</Text>
-      <Text>HomeScreen</Text>
-      <Text>HomeScreen</Text>
-      <Text>HomeScreen</Text>
-      <Text>HomeScreen</Text>
-      <Text>HomeScreen</Text>
-      <Text>HomeScreen</Text>
       <AirplaneIcon />
     </View>
   );
