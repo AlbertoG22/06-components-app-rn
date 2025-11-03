@@ -4,6 +4,8 @@ import { CustomView } from '../../components/ui/CustomView';
 import { Title } from '../../components/ui/Title';
 import { globalStyles } from '../../../config/theme/theme';
 import { Button } from '../../components/ui/Button';
+import prompt from 'react-native-prompt-android';
+import { showPrompt } from '../../../config/adapters/prompt.adapter';
 
 export const AlertScreen = () => {
 
@@ -33,15 +35,42 @@ export const AlertScreen = () => {
     ]);
   };
 
-  const showPromt = () => {
-    Alert.prompt(
-      'Correo electrónico',
-      'Enim commodo ut amer esse aligua.',
-      (valor: string) => console.log({ valor }),
-      'secure-text',
-      'Soy el valor por defecto',
-      'number-pad'
-    );
+  const onShowPromt = () => {
+
+    // prompt(
+    //   'Enter password',
+    //   'Enter your password to claim your $1.5B in lottery winnings',
+    //   [
+    //     {text: 'Cancel', onPress: () => console.log('Cancel Pressed'), style: 'cancel'},
+    //     {text: 'OK', onPress: password => console.log('OK Pressed, password: ' + password)},
+    //   ],
+    //   {
+    //     type: 'secure-text',
+    //     cancelable: false,
+    //     defaultValue: 'test',
+    //     placeholder: 'placeholder'
+    //   }
+    // );
+
+    showPrompt({
+      title: 'Correo electrónico',
+      subTitle: 'Enim commodo ut amer esse aligua.',
+      buttons: [
+        // { text: 'Cancel', onPress: () => console.log('Cancel Pressed'), style: 'cancel' },
+        { text: 'OK', onPress: () => console.log('OK Pressed') },
+      ],
+      placeholder: 'Placehoolder'
+    });
+    
+    // ! Código nativo
+    // Alert.prompt(
+    //   'Correo electrónico',
+    //   'Enim commodo ut amer esse aligua.',
+    //   (valor: string) => console.log({ valor }),
+    //   'secure-text',
+    //   'Soy el valor por defecto',
+    //   'number-pad'
+    // );
   };
 
   return (
@@ -64,7 +93,7 @@ export const AlertScreen = () => {
 
       <Button
         text='Prompt - Input'
-        onPress={ showPromt }
+        onPress={ onShowPromt }
       />
 
     </CustomView>
