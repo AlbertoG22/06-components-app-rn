@@ -5,6 +5,7 @@ import { Card } from '../../components/ui/Card';
 import { Button } from '../../components/ui/Button';
 import { CustomSwitch } from '../../components/ui/CustomSwitch';
 import { isEnabled } from 'react-native/Libraries/Performance/Systrace';
+import { Separator } from '../../components/ui/Separator';
 
 export const SwitchScreen = () => {
 
@@ -26,11 +27,15 @@ export const SwitchScreen = () => {
           text='Está activo?'
         />
 
+        <Separator />
+
         <CustomSwitch 
           isOn={ state.isHungry }
           onChange={ (value) => setState({ ...state, isHungry: value }) }
           text='Tiene hambre?'
         />
+
+        <Separator />
 
         <CustomSwitch 
           isOn={ state.isHappy }

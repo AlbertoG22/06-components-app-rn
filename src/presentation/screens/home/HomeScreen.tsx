@@ -85,7 +85,7 @@ export const HomeScreen = () => {
                 key={ item.component }
                 { ...item } //<-- el spread es lo mismo que hacerla una por una: name={name} icon={icon}....
                 isFirst={ index === 0 }
-                isLast={ index === menuItems.length - 1 }
+                isLast={ index === animationMenuItems.length - 1 }
               />
             ))
           }
@@ -113,7 +113,7 @@ export const HomeScreen = () => {
                 key={ item.component }
                 { ...item } //<-- el spread es lo mismo que hacerla una por una: name={name} icon={icon}....
                 isFirst={ index === 0 }
-                isLast={ index === menuItems.length - 1 }
+                isLast={ index === uiMenuItems.length - 1 }
               />
             ))
           }
