@@ -16,9 +16,9 @@ export const AlertScreen = () => {
       },
       {text: 'OK', onPress: () => console.log('OK Pressed')},
     ]);
-  }
+  };
 
-  const createThreeButtonAlert = () =>
+  const createThreeButtonAlert = () => {
     Alert.alert('Alert Title', 'My Alert Msg', [
       {
         text: 'Ask me later',
@@ -31,6 +31,18 @@ export const AlertScreen = () => {
       },
       {text: 'OK', onPress: () => console.log('OK Pressed')},
     ]);
+  };
+
+  const showPromt = () => {
+    Alert.prompt(
+      'Correo electrónico',
+      'Enim commodo ut amer esse aligua.',
+      (valor: string) => console.log({ valor }),
+      'secure-text',
+      'Soy el valor por defecto',
+      'number-pad'
+    );
+  };
 
   return (
     <CustomView style={ globalStyles.globalMargin }>
@@ -52,7 +64,7 @@ export const AlertScreen = () => {
 
       <Button
         text='Prompt - Input'
-        onPress={ () => {} }
+        onPress={ showPromt }
       />
 
     </CustomView>
