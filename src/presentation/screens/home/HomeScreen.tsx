@@ -93,20 +93,6 @@ export const HomeScreen = () => {
           <View style={{ marginTop: 30 }} />
 
           { 
-            menuItems.map( (item, index) => (
-              // <Text key={ item.component }>{ item.name }</Text>
-              <MenuItem 
-                key={ item.component }
-                { ...item } //<-- el spread es lo mismo que hacerla una por una: name={name} icon={icon}....
-                isFirst={ index === 0 }
-                isLast={ index === menuItems.length - 1 }
-              />
-            ))
-          }
-
-          <View style={{ marginTop: 30 }} />
-
-          { 
             uiMenuItems.map( (item, index) => (
               // <Text key={ item.component }>{ item.name }</Text>
               <MenuItem 
@@ -114,6 +100,20 @@ export const HomeScreen = () => {
                 { ...item } //<-- el spread es lo mismo que hacerla una por una: name={name} icon={icon}....
                 isFirst={ index === 0 }
                 isLast={ index === uiMenuItems.length - 1 }
+              />
+            ))
+          }
+
+          <View style={{ marginTop: 30 }} />
+
+          { 
+            menuItems.map( (item, index) => (
+              // <Text key={ item.component }>{ item.name }</Text>
+              <MenuItem 
+                key={ item.component }
+                { ...item } //<-- el spread es lo mismo que hacerla una por una: name={name} icon={icon}....
+                isFirst={ index === 0 }
+                isLast={ index === menuItems.length - 1 }
               />
             ))
           }
