@@ -3,6 +3,7 @@ import { ScrollView, Text, View } from 'react-native';
 import { globalStyles } from '../../../config/theme/theme';
 import { Title } from '../../components/ui/Title';
 import { MenuItem } from '../../components/ui/MenuItem';
+import { CustomView } from '../../components/ui/CustomView';
 
 const animationMenuItems = [
   // 01-animationMenuItems
@@ -73,55 +74,53 @@ const uiMenuItems = [
 
 export const HomeScreen = () => {
   return (
-    <View style={ globalStyles.mainContainer }>
-      <View style={ globalStyles.globalMargin }>
-        <ScrollView>
-          <Title text='Opciones del menú' safe />
-          
-          { 
-            animationMenuItems.map( (item, index) => (
-              // <Text key={ item.component }>{ item.name }</Text>
-              <MenuItem 
-                key={ item.component }
-                { ...item } //<-- el spread es lo mismo que hacerla una por una: name={name} icon={icon}....
-                isFirst={ index === 0 }
-                isLast={ index === animationMenuItems.length - 1 }
-              />
-            ))
-          }
+    <CustomView>
+      <ScrollView>
+        <Title text='Opciones del menú' safe />
+        
+        { 
+          animationMenuItems.map( (item, index) => (
+            // <Text key={ item.component }>{ item.name }</Text>
+            <MenuItem 
+              key={ item.component }
+              { ...item } //<-- el spread es lo mismo que hacerla una por una: name={name} icon={icon}....
+              isFirst={ index === 0 }
+              isLast={ index === animationMenuItems.length - 1 }
+            />
+          ))
+        }
 
-          <View style={{ marginTop: 30 }} />
+        <View style={{ marginTop: 30 }} />
 
-          { 
-            uiMenuItems.map( (item, index) => (
-              // <Text key={ item.component }>{ item.name }</Text>
-              <MenuItem 
-                key={ item.component }
-                { ...item } //<-- el spread es lo mismo que hacerla una por una: name={name} icon={icon}....
-                isFirst={ index === 0 }
-                isLast={ index === uiMenuItems.length - 1 }
-              />
-            ))
-          }
+        { 
+          uiMenuItems.map( (item, index) => (
+            // <Text key={ item.component }>{ item.name }</Text>
+            <MenuItem 
+              key={ item.component }
+              { ...item } //<-- el spread es lo mismo que hacerla una por una: name={name} icon={icon}....
+              isFirst={ index === 0 }
+              isLast={ index === uiMenuItems.length - 1 }
+            />
+          ))
+        }
 
-          <View style={{ marginTop: 30 }} />
+        <View style={{ marginTop: 30 }} />
 
-          { 
-            menuItems.map( (item, index) => (
-              // <Text key={ item.component }>{ item.name }</Text>
-              <MenuItem 
-                key={ item.component }
-                { ...item } //<-- el spread es lo mismo que hacerla una por una: name={name} icon={icon}....
-                isFirst={ index === 0 }
-                isLast={ index === menuItems.length - 1 }
-              />
-            ))
-          }
+        { 
+          menuItems.map( (item, index) => (
+            // <Text key={ item.component }>{ item.name }</Text>
+            <MenuItem 
+              key={ item.component }
+              { ...item } //<-- el spread es lo mismo que hacerla una por una: name={name} icon={icon}....
+              isFirst={ index === 0 }
+              isLast={ index === menuItems.length - 1 }
+            />
+          ))
+        }
 
-          <View style={{ marginTop: 30 }} />
+        <View style={{ marginTop: 30 }} />
 
-        </ScrollView>
-      </View>
-    </View>
+      </ScrollView>
+    </CustomView>
   );
 };
