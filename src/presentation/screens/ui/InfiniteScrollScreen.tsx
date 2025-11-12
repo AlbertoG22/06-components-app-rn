@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import { CustomView } from '../../components/ui/CustomView';
-import { Title } from '../../components/ui/Title';
 import { FlatList } from 'react-native-gesture-handler';
 import { ActivityIndicator, Image, Text, View } from 'react-native';
 import { colors } from '../../../config/theme/theme';

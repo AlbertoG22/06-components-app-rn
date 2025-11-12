@@ -6,7 +6,7 @@ import { globalStyles } from '../../../config/theme/theme';
 import { ThemeContext } from '../../context/ThemeContext';
 
 export const PullToRefreshScreen = () => {
-  const { colors } = useContext(ThemeContext);
+  const { colors, isDark } = useContext(ThemeContext);
   const [isRefreshing, setIsRefreshing] = useState(false);
 
   const { top } = useSafeAreaInsets(); 
